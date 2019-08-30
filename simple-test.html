@@ -1,0 +1,39 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <script src="https://www.youtube.com/player_api"></script>
+    </head>
+
+<body>
+    <div id="hidden-video" style="display: none"></div>
+    <br>
+    <div id="visible-video"></div>
+</body>
+
+    <script type="text/javascript">
+        var hiddenVideo
+        function onYouTubeIframeAPIReady() {
+
+            hiddenVideo = new YT.Player('hidden-video', {
+                height: '360',
+                width: '640',
+                videoId: 'l-qwvSn6Euk'
+            });
+
+            new YT.Player('visible-video', {
+                height: '360',
+                width: '640',
+                videoId: 'l-qwvSn6Euk',
+                events: {
+                    'onStateChange': playHiddenVideo
+                }
+            });
+        }
+        function playHiddenVideo(event) {
+            hiddenVideo.mute()
+            hiddenVideo.playVideo()
+        }
+
+    </script>
+
+</html>
