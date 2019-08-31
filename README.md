@@ -1,2 +1,2 @@
 # youtube-api
-Repo to tests the youtube API JS
+Repo to test the youtube API JS
